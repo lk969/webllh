@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>洛阳旅游景点 | 三大必游地推荐</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">洛阳旅游指南</div>
+            <ul class="nav-links">
+                <li><a href="#about">洛阳简介</a></li>
+                <li><a href="#attractions">景点介绍</a></li>
+                <li><a href="#contact">联系方式</a></li>
+            </ul>
+            <!-- 移动端菜单按钮 -->
+            <button class="menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <!-- 主体内容 -->
+    <main>
+        <!-- 洛阳简介部分 -->
+        <section id="about" class="section about">
+            <div class="container">
+                <h2>洛阳简介</h2>
+                <div class="about-content">
+                    <img src="./images/luoyang.jpg" alt="洛阳全景" class="avatar">
+                    <div class="bio">
+                        <h3>十三朝古都，华夏文明的摇篮</h3>
+                        <p>洛阳位于河南省西部，是中国四大古都之一，拥有5000多年文明史、4000多年城市史、1500多年建都史。作为丝绸之路的东方起点、隋唐大运河的中心，洛阳留存了大量历史遗迹，其中白马寺、龙门石窟、应天门更是必游的文化地标。</p>
+                        <p>本网站聚焦洛阳三大核心景点，带你领略古都的历史底蕴与人文魅力。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 景点介绍部分 -->
+        <section id="attractions" class="section projects">
+            <div class="container">
+                <h2>三大必游景点</h2>
+                <div class="projects-grid">
+                    <!-- 白马寺 -->
+                    <div class="project-card">
+                        <img src="./images/baimasi.jpg" alt="白马寺" class="project-img">
+                        <h3>白马寺</h3>
+                        <p>中国第一古刹，始建于东汉永平十一年（公元68年），是佛教传入中国后兴建的第一座官办寺院，有"中国佛教祖庭"之称。寺内保存了大量元代夹纻干漆造像，堪称国宝。</p>
+                        <p><strong>特色</strong>：国际佛殿区融合多国建筑风格，感受佛教文化传播之路。</p>
+                        <a href="https://baike.baidu.com/item/白马寺/104108" class="project-link" target="_blank">了解更多 →</a>
+                    </div>
+                    
+                    <!-- 龙门石窟 -->
+                    <div class="project-card">
+                        <img src="./images/longmen.jpg" alt="龙门石窟" class="project-img">
+                        <h3>龙门石窟</h3>
+                        <p>世界文化遗产，开凿于北魏孝文帝年间，历经10多个朝代陆续营造达400余年，现存洞窟像龛2345个，造像10万余尊，是中国石窟艺术的巅峰之作。</p>
+                        <p><strong>特色</strong>：卢舍那大佛（高17.14米）为武则天根据自身形象捐资雕造，气势恢宏。</p>
+                        <a href="https://baike.baidu.com/item/龙门石窟/106260" class="project-link" target="_blank">了解更多 →</a>
+                    </div>
+                    
+                    <!-- 应天门 -->
+                    <div class="project-card">
+                        <img src="./images/yingtianmen.jpg" alt="应天门" class="project-img">
+                        <h3>应天门</h3>
+                        <p>隋唐洛阳城宫城的正南门，始建于隋大业元年（公元605年），是当时朝廷举行重大庆典和外交活动的场所。现存建筑为2019年复建，还原了"双向三出阙"的恢弘形制。</p>
+                        <p><strong>特色</strong>：夜间灯光秀再现盛唐繁华，登楼可俯瞰洛阳城景。</p>
+                        <a href="https://baike.baidu.com/item/应天门/22497017" class="project-link" target="_blank">了解更多 →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系方式部分 -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2>联系方式</h2>
+                <div class="contact-info">
+                    <p>整理人：林立煌</p>
+                    <p>邮箱：<a href="mailto:18960164990@163.com">18960164990@163.com</a></p>
+                    <p>旅游攻略参考：<a href="https://lvyou.baidu.com/luoyang" target="_blank">百度旅游-洛阳</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 林立煌 | 洛阳旅游景点指南 | 基于CS50W课程开发</p>
+        </div>
+    </footer>
+
+    <!-- 交互脚本 -->
+    <script>
+        // 移动端菜单切换
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>
